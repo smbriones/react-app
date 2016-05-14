@@ -1,29 +1,25 @@
-import 'babel-polyfill';
-import React from 'react';
-import routes from '../shared/routes';
-import DevTools from '../shared/container/DevTools/DevTools';
-import { render } from 'react-dom';
-import { Provider } from 'react-redux';
-import { Router, browserHistory } from 'react-router';
+/* eslint no-unused-vars: 0 */
 import { configureStore } from '../shared/redux/store/configureStore';
+import { Provider } from 'react-redux';
+import postReducer from '../shared/redux/reducers/reducer';
+import { render } from 'react-dom';
+import React from 'react';
+import App from '../shared/container/App';
+import PostListView from '../shared/container/PostListView/PostListView';
+import PostDetailView from '../shared/container/PostDetailView/PostDetailView';
+import { Router, browserHistory, Route, IndexRoute, match } from 'react-router';
+import routes from '../shared/routes';
+
+import '../styles/main.scss';
+
+import createBrowserHistory from 'history/lib/createBrowserHistory';
 
 const store = configureStore(window.__INITIAL_STATE__);
 const history = browserHistory;
-const dest = document.getElementById('root');
 
-let toRender;
-
-if (process.env.CLIENT && !window.devToolsExtension) {
-  toRender = (<Provider store={store}>
-                <div>
-                  <Router history={history} routes={routes} />
-                  <DevTools />
-                </div>
-              </Provider>);
-} else {
-  toRender = (<Provider store={store}>
-                <Router history={history} routes={routes} />
-              </Provider>);
-}
-
-render(toRender, dest);
+render((
+      <Provider store={store}>
+        <Router history={history} routes={routes} />
+      </Provider>
+      )
+     , document.getElementById('root'));

@@ -1,4 +1,5 @@
 var webpack = require('webpack');
+var path = require('path');
 
 module.exports = {
   devtool: 'cheap-module-eval-source-map',
@@ -20,8 +21,8 @@ module.exports = {
   module: {
     loaders: [
       {
-        test: /\.css$/,
-        loader: 'style!css?modules',
+        test: /\.scss$/,
+        loaders: ['style', 'css', 'sass'],
       },
       {
         test: /\.jsx*$/,
@@ -35,11 +36,6 @@ module.exports = {
   },
 
   plugins: [
-    new webpack.HotModuleReplacementPlugin(),
-    new webpack.DefinePlugin({
-      'process.env': {
-        CLIENT: JSON.stringify(true)
-      }
-    })
+    new webpack.HotModuleReplacementPlugin()
   ],
 };
