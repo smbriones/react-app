@@ -12,8 +12,6 @@ describe('component tests', () => {
   it('should render PostListItem properly', () => {
     const renderer = TestUtils.createRenderer();
     const post = {
-      name: 'Prank',
-      title: 'first post',
       content: 'hello world!',
       slug: 'first-post',
       cuid: 'cikpdcdn60000zjxom3dmavzq',
@@ -32,11 +30,9 @@ describe('component tests', () => {
       <div className="single-post">
         <h3 className="post-title ">
           <Link to={`/post/${post.slug}-${post.cuid}`} onClick={function noop() {}}>
-            {post.title}
+            {post.content}
           </Link>
         </h3>
-        <p className="author-name">By {post.name}</p>
-        <p className="post-desc">{post.content}</p>
         <p className="post-action"><a href="#" onClick={function noop() {}}>Delete Post</a></p>
         <hr className="divider"/>
       </div>
@@ -51,9 +47,7 @@ describe('component tests', () => {
     expect(output).toEqualJSX(
       <div className="form ">
         <div className="form-content">
-          <h2 className="form-title">Create new post</h2>
-          <input placeholder="Author's Name" className="form-field" ref="name"/>
-          <input placeholder="Post Title" className="form-field" ref="title"/>
+          <h2 className="form-title">Add Task</h2>
           <textarea placeholder="Post Content" className="form-field" ref="content"></textarea>
           <a className="post-submit-button align-right" href="#" onClick={function noop() {}}>Submit</a>
         </div>
@@ -69,9 +63,7 @@ describe('component tests', () => {
     expect(output).toEqualJSX(
       <div className="form appear">
         <div className="form-content">
-          <h2 className="form-title">Create new post</h2>
-          <input placeholder="Author's Name" className="form-field" ref="name"/>
-          <input placeholder="Post Title" className="form-field" ref="title"/>
+          <h2 className="form-title">Add Task</h2>
           <textarea placeholder="Post Content" className="form-field" ref="content"></textarea>
           <a className="post-submit-button align-right" href="#" onClick={function noop() {}}>Submit</a>
         </div>

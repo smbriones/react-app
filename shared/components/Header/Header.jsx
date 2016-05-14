@@ -1,19 +1,14 @@
 import React, { PropTypes } from 'react';
 import { Link } from 'react-router';
 
-function Header(props, context) {
+function Header(props) {
   return (
     <div className="header">
       <div className="container">
         <div className="header-content">
           <h1 className="site-title">
-            <Link to="/" onClick={props.handleLogoClick}>MERN Starter Blog</Link>
+            <Link to="/" onClick={props.handleLogoClick}>TODO App</Link>
           </h1>
-          {
-            context.router.isActive('/', true)
-              ? <a className="add-post-button" href="#" onClick={props.onClick}>Add Post</a>
-              : null
-          }
         </div>
       </div>
     </div>

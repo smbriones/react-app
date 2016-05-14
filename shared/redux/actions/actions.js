@@ -7,8 +7,6 @@ const baseURL = typeof window === 'undefined' ? process.env.BASE_URL || (`http:/
 export function addPost(post) {
   return {
     type: ActionTypes.ADD_POST,
-    name: post.name,
-    title: post.title,
     content: post.content,
     slug: post.slug,
     cuid: post.cuid,
@@ -29,8 +27,6 @@ export function addPostRequest(post) {
       method: 'post',
       body: JSON.stringify({
         post: {
-          name: post.name,
-          title: post.title,
           content: post.content,
         },
       }),

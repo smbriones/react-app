@@ -7,12 +7,10 @@ class PostCreateView extends Component {
   }
 
   addPost() {
-    const nameRef = this.refs.name;
-    const titleRef = this.refs.title;
     const contentRef = this.refs.content;
-    if (nameRef.value && titleRef.value && contentRef.value) {
-      this.props.addPost(nameRef.value, titleRef.value, contentRef.value);
-      nameRef.value = titleRef.value = contentRef.value = '';
+    if (contentRef.value) {
+      this.props.addPost(contentRef.value);
+      contentRef.value = '';
     }
   }
 
@@ -21,9 +19,7 @@ class PostCreateView extends Component {
     return (
       <div className={cls}>
         <div className="form-content">
-          <h2 className="form-title">Create new post</h2>
-          <input placeholder="Author's Name" className="form-field" ref="name"/>
-          <input placeholder="Post Title" className="form-field" ref="title"/>
+          <h2 className="form-title">Add Task</h2>
           <textarea placeholder="Post Content" className="form-field" ref="content"></textarea>
           <a className="post-submit-button align-right" href="#" onClick={this.addPost}>Submit</a>
         </div>

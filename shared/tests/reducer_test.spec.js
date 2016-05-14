@@ -7,8 +7,6 @@ describe('reducer tests', () => {
   it('action ADD_POST is working', () => {
     const stateBefore = { posts: ['foo'], post: null };
     const stateAfter = { posts: [{
-      name: 'prank',
-      title: 'first post',
       content: 'Hello world!',
       _id: null,
       cuid: null,
@@ -17,8 +15,6 @@ describe('reducer tests', () => {
 
     const action = {
       type: ActionTypes.ADD_POST,
-      name: 'prank',
-      title: 'first post',
       content: 'Hello world!',
       _id: null,
       cuid: null,
@@ -32,8 +28,6 @@ describe('reducer tests', () => {
   it('action ADD_SELECTED_POST is working', () => {
     const stateBefore = {
       posts: [{
-        name: 'prank',
-        title: 'first post',
         content: 'Hello world!',
         _id: null,
         slug: 'first-post',
@@ -44,15 +38,11 @@ describe('reducer tests', () => {
 
     const stateAfter = {
       posts: [{
-        name: 'prank',
-        title: 'first post',
         content: 'Hello world!',
         _id: null,
         slug: 'first-post',
       }],
       post: {
-        name: 'prank',
-        title: 'first post',
         content: 'Hello world!',
         _id: null,
         slug: 'first-post',
@@ -62,8 +52,6 @@ describe('reducer tests', () => {
     const action = {
       type: ActionTypes.ADD_SELECTED_POST,
       post: {
-        name: 'prank',
-        title: 'first post',
         content: 'Hello world!',
         _id: null,
         slug: 'first-post',

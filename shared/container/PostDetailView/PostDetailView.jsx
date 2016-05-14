@@ -28,9 +28,7 @@ class PostDetailView extends Component {
         <Header onClick={function noop() {}} handleLogoClick={this.handleLogoClick}/>
         <div className="container">
           <div className="single-post post-detail">
-            <h3 className="post-title">{this.props.post.title}</h3>
-            <p className="author-name">By {this.props.post.name}</p>
-            <p className="post-desc">{this.props.post.content}</p>
+            <h3 className="post-desc">{this.props.post.content}</h3>
           </div>
         </div>
         <Footer />
@@ -49,8 +47,6 @@ PostDetailView.contextTypes = {
 
 PostDetailView.propTypes = {
   post: PropTypes.shape({
-    name: PropTypes.string.isRequired,
-    title: PropTypes.string.isRequired,
     content: PropTypes.string.isRequired,
     slug: PropTypes.string.isRequired,
     cuid: PropTypes.string.isRequired,
