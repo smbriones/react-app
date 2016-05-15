@@ -27,7 +27,7 @@ class PostDetailView extends Component {
       <div>
         <Header onClick={function noop() {}} handleLogoClick={this.handleLogoClick}/>
         <div className="container">
-          <div className="single-post post-detail">
+          <div className="task post-detail">
             <h3 className="post-desc">{this.props.post.content}</h3>
           </div>
         </div>

@@ -27,14 +27,13 @@ describe('component tests', () => {
     );
     const output = renderer.getRenderOutput();
     expect(output).toEqualJSX(
-      <div className="single-post">
-        <h3 className="post-title ">
+      <div className="task">
+        <h3>
           <Link to={`/post/${post.slug}-${post.cuid}`} onClick={function noop() {}}>
             {post.content}
           </Link>
         </h3>
-        <p className="post-action"><a href="#" onClick={function noop() {}}>Delete Post</a></p>
-        <hr className="divider"/>
+        <p className="post-action"><a href="#" onClick={function noop() {}}>Delete</a></p>
       </div>
     );
   });
@@ -47,9 +46,8 @@ describe('component tests', () => {
     expect(output).toEqualJSX(
       <div className="form ">
         <div className="form-content">
-          <h2 className="form-title">Add Task</h2>
-          <textarea placeholder="Post Content" className="form-field" ref="content"></textarea>
-          <a className="post-submit-button align-right" href="#" onClick={function noop() {}}>Submit</a>
+          <input placeholder="What do you need to do?" className="form-field" ref="content"></input>
+          <a className="button add-task-button" href="#" onClick={function noop() {}}>✓ Add Task</a>
         </div>
       </div>
     );
@@ -63,9 +61,8 @@ describe('component tests', () => {
     expect(output).toEqualJSX(
       <div className="form appear">
         <div className="form-content">
-          <h2 className="form-title">Add Task</h2>
-          <textarea placeholder="Post Content" className="form-field" ref="content"></textarea>
-          <a className="post-submit-button align-right" href="#" onClick={function noop() {}}>Submit</a>
+          <input placeholder="What do you need to do?" className="form-field" ref="content"></input>
+          <a className="button add-task-button" href="#" onClick={function noop() {}}>✓ Add Task</a>
         </div>
       </div>
     );

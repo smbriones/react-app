@@ -3,14 +3,13 @@ import { Link } from 'react-router';
 
 function PostListItem(props) {
   return (
-    <div className="single-post">
-      <h3 className="post-title ">
+    <div className="task">
+      <h3>
         <Link to={`/post/${props.post.slug}-${props.post.cuid}`} onClick={props.onClick}>
           {props.post.content}
         </Link>
       </h3>
-      <p className="post-action"><a href="#" onClick={props.onDelete}>Delete Post</a></p>
-      <hr className="divider"/>
+      <p className="post-action"><a href="#" onClick={props.onDelete}>Delete</a></p>
     </div>
   );
 }

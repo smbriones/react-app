@@ -19,9 +19,8 @@ class PostCreateView extends Component {
     return (
       <div className={cls}>
         <div className="form-content">
-          <h2 className="form-title">Add Task</h2>
-          <textarea placeholder="Post Content" className="form-field" ref="content"></textarea>
-          <a className="post-submit-button align-right" href="#" onClick={this.addPost}>Submit</a>
+          <input placeholder="What do you need to do?" className="form-field" ref="content"></input>
+          <a className="button add-task-button" href="#" onClick={this.addPost}>✓ Add Task</a>
         </div>
       </div>
     );

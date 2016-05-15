@@ -7,7 +7,7 @@ function Header(props) {
       <div className="container">
         <div className="header-content">
           <h1 className="site-title">
-            <Link to="/" onClick={props.handleLogoClick}>TODO App</Link>
+            <Link to="/" onClick={props.handleLogoClick}>todo list</Link>
           </h1>
         </div>
       </div>
